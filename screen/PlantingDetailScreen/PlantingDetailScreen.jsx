@@ -18,75 +18,91 @@ const PlantingDetailScreen = () => {
 
 	return (
 		<View className='flex h-full bg-user_bg'>
-			<View className='flex-1 flex align-center justify-center'>
+			<View className='flex align-center justify-center'>
 				<TouchableOpacity onPress={() => navigation.goBack()}
 				className="flex justify-center content-center bg-primary p-2 my-3 rounded-tr-2xl rounded-bl-2xl ml-3 w-9 h-9 bg-user_back">
 					<ArrowLeftIcon size="20" color="#000000"></ArrowLeftIcon>
 				</TouchableOpacity>
 			</View>
-			<ScrollView className='mx-5'>
-				<View className='bg-green-100'>
+
+			<ScrollView className='flex-1 px-10'>
+				
+				<View>
 					<Text className='text-2xl font-bold'>Overview</Text>
-					<View className='flex-col'>
-						<Text>
-							OK
-						</Text>
-						<Text>
-							health
-						</Text>
-					</View>
+					<View className='flex-row justify-around'>
+						<View className='flex-0 flex-col justify-center bg-green-500 py-2 my-5 rounded-[15px] w-[16vh] h-[15vh]'>
+							<Text className='text-center font-extrabold text-5xl'>
+								OK
+							</Text>
+							<Text className='text-center'>
+								health
+							</Text>
+						</View>
 
-					<View className=''>
-						<Text>
-							20
-						</Text>
-						<Text>
-							Feb
-						</Text>
-						<Text>
-							maturity
-						</Text>
+						<View className='flex-0 flex-col justify-center bg-green-500 py-2 my-5 rounded-[15px] w-[16vh] h-[15vh]'>
+							<Text className='text-center font-bold text-2xl'>
+								20
+							</Text>
+							<Text className='text-center font-bold text-2xl'>
+								Feb
+							</Text>
+							<Text className='text-center'>
+								maturity
+							</Text>
+						</View>
 					</View>
 				</View>
 
-				<View className='bg-blue-50'>
-					<Text className='text-2xl font-bold'>Alerts</Text>
-					<View>
-						<Text>Water</Text>
-						<Text>7pm Daily</Text>
+				<View className='mt-5'>
+					<Text className='text-2xl font-bold mb-2'>Alerts</Text>
+					<View className='flex-row bg-[#FFF4DDDD] p-2 rounded-xl my-1 justify-content'>
+						<View className='flex-1'>
+							<Image className='w-6 h-6' source={require("../../asset/logo/watering.png")}/>
+						</View>
+						<Text className='flex-[4]'>Water</Text>
+						<Text className='flex-[4] text-right'>7pm Daily</Text>
 					</View>
-					<View>
-						<Text>Fertillizer</Text>
-						<Text>3 Feb</Text>
+					<View className='flex-row bg-[#FFF4DDDD] p-2 rounded-xl my-1 justify-content'>
+						<View className='flex-1'>
+							<Image className='w-6 h-6' source={require("../../asset/logo/fertilizer.png")}/>
+						</View>
+						<Text className='flex-[4]'>Fertillizer</Text>
+						<Text className='flex-[4] text-right'>3 Feb</Text>
 					</View>
 				</View>
 
 				<View>
-					<Text className='text-2xl font-bold'>Current Step</Text>
+					<Text className='text-2xl font-bold my-5'>Current Step</Text>
 					{ /** big block of random green block */}
-					<View className='h-50 bg-green-500 w-full' />
+					<View className='h-[15vh] bg-green-400 w-full rounded-xl' />
 				</View>
 
 				<View>
-					<Text className='text-2xl font-bold'>Logging</Text>
-					<Text>height</Text>
-					<Text></Text>
-					<Text>left size</Text>
-					<Text></Text>
+					<Text className='text-2xl font-bold my-5'>Logging</Text>
+					<View className='flex-row my-1 border-2 border-blue-300 bg-slate-50 rounded-xl p-2'>
+						<Text className='flex-1 text-left'>height</Text>
+						<Text className='flex-1 text-right'>12</Text>
+					</View>
+					<View className='flex-row my-1 border-2 border-blue-300 bg-slate-50 rounded-xl p-2'>
+						<Text className='flex-1 text-left'>left size</Text>
+						<Text className='flex-1 text-right'>12</Text>
+					</View>
 				</View>
 
 				<View>
-					<Text className='text-2xl font-bold'>Actions</Text>
-					<TouchableOpacity className='bg-red-500 m-1 p-2 rounded-xl'>
+					<Text className='text-2xl font-bold my-2'>Actions</Text>
+					<TouchableOpacity className='bg-red-500 m-1 mx-2 p-2 rounded-xl'>
 						<Text className='text-center'>View Planting Directions</Text>
 					</TouchableOpacity>
-					<TouchableOpacity className='bg-red-500 m-1 p-2 rounded-xl'>
+					<TouchableOpacity className='bg-red-500 m-1 mx-2 p-2 rounded-xl'>
 						<Text className='text-center'>Check for Disease</Text>
 					</TouchableOpacity>
-					<TouchableOpacity className='bg-red-500 m-1 p-2 rounded-xl'>
+					<TouchableOpacity className='bg-red-500 m-1 mx-2 p-2 rounded-xl'>
 						<Text className='text-center'>Connect Sensors</Text>
 					</TouchableOpacity>
 				</View>
+
+				<View className='w-full h-[10vh]' />
 			</ScrollView>
 			<Footer />
 		</View>
